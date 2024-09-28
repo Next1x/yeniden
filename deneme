@@ -1,0 +1,1000 @@
+--main
+
+if not game:IsLoaded() then
+    game.Loaded:Wait()
+end
+
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/Giangplay/Script/main/Orion_Library_PE_V2.lua')))()
+local Window = OrionLib:MakeWindow({Name = "nextix's universal script hub", HidePremium = false, IntroEnabled = false, SaveConfig = false, ConfigFolder = "nextix"})
+
+--tabs
+
+local Tab1 = Window:MakeTab({
+	Name = "Home",
+	Icon = "rbxassetid://4370345144",
+	PremiumOnly = false
+})
+
+local Tab2 = Window:MakeTab({
+	Name = "Admins",
+	Icon = "rbxassetid://8997387937",
+	PremiumOnly = false
+})
+
+local Tab3 = Window:MakeTab({
+	Name = "Scripts",
+	Icon = "rbxassetid://7733955511",
+	PremiumOnly = false
+})
+
+local Tab4 = Window:MakeTab({
+	Name = "Hubs",
+	Icon = "rbxassetid://4370318685",
+	PremiumOnly = false
+})
+
+local Tab5 = Window:MakeTab({
+	Name = "LocalPlayer",
+	Icon = "rbxassetid://4335489011",
+	PremiumOnly = false
+})
+
+local Tab6 = Window:MakeTab({
+	Name = "Credits",
+	Icon = "rbxassetid://7734053426",
+	PremiumOnly = false
+})
+
+--shitz
+
+local player = game.Players.LocalPlayer
+local LocalPlayerUsername = player.Name
+local LocalPlayerId = player.UserId
+local GameName = game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name
+
+--start
+
+local Section = Tab1:AddSection({
+	Name = "Welcome, " .. LocalPlayerUsername
+})
+
+local Section = Tab1:AddSection({
+	Name = "Your ID: " .. LocalPlayerId
+})
+
+local Section = Tab1:AddSection({
+	Name = "You are playing: " .. GameName
+})
+
+local Section = Tab1:AddSection({
+	Name = "Last Update: 4/11/2024"
+})
+
+Tab2:AddDropdown({
+	Name = "Infinite Yield",
+	Default = "",
+	Options = {"Classic", "Delta Edition"},
+	Callback = function(Value)
+		if Value == "Classic" then
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source"))()
+		elseif Value == "Delta Edition" then
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/yofriendfromschool1/mobile-delta-inf-yield/main/deltainfyield.txt"))()
+		end
+	end    
+})
+
+Tab2:AddButton({
+	Name = "Nameless Admin",
+	Callback = function()
+      		loadstring(game:HttpGet('https://raw.githubusercontent.com/FilteringEnabled/NamelessAdmin/main/Source'))()
+  	end    
+})
+
+Tab2:AddButton({
+	Name = "Fates Admin",
+	Callback = function()
+      		loadstring(game:HttpGet("https://raw.githubusercontent.com/fatesc/fates-admin/main/main.lua"))()
+  	end    
+})
+
+Tab2:AddButton({
+	Name = "IV ADMIN",
+	Callback = function()
+      		loadstring(game:HttpGet("https://raw.githubusercontent.com/BloodyBurns/Hex/main/Iv%20Admin%20v3.lua"))()
+  	end    
+})
+
+Tab2:AddButton({
+	Name = "Proton Admin",
+	Callback = function()
+      		_G.UI_Id = "default" --set this to "default" for the default ui
+		loadstring(game:HttpGet('https://raw.githubusercontent.com/DigitalityScripts/roblox-scripts/main/Proton%20Free'))()
+  	end    
+})
+
+Tab2:AddButton({
+	Name = "Proton Admin [V2]",
+	Callback = function()
+      		_G.UI_Id = "default" --set this to "default" for the default ui
+		loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/5e6e6cc1bb32fd926764d064e2c60a3b.lua"))()
+  	end    
+})
+
+Tab2:AddButton({
+	Name = "Reviz Admin",
+	Callback = function()
+      		loadstring(game:HttpGet("https://raw.githubusercontent.com/yofriendfromschool1/Sky-Hub/main/Reviz%20AdminV2"))()
+  	end    
+})
+
+local Section = Tab3:AddSection({
+	Name = "Scripts For Devs"
+})
+
+Tab3:AddButton({
+	Name = "Dex",
+	Callback = function()
+      		loadstring(game:HttpGet("https://raw.githubusercontent.com/Babyhamsta/RBLX_Scripts/main/Universal/BypassedDarkDexV3.lua", true))()
+  	end    
+})
+
+Tab3:AddButton({
+	Name = "SimpleSpy",
+	Callback = function()
+      		loadstring(game:HttpGet("https://raw.githubusercontent.com/REDzHUB/RS/main/SimpleSpyMobile"))()
+  	end    
+})
+
+Tab3:AddButton({
+	Name = "Hydroxide",
+	Callback = function()
+      		local owner = "Hosvile"
+local branch = "revision"
+
+local function webImport(file)
+    return loadstring(game:HttpGetAsync(("https://raw.githubusercontent.com/%s/MC-Hydroxide/%s/%s.lua"):format(owner, branch, file)), file .. '.lua')()
+end
+
+webImport("init")
+webImport("ui/main")
+  	end    
+})
+
+Tab3:AddButton({
+	Name = "HTTPSpy",
+	Callback = function()
+      		loadstring(game:HttpGet("https://raw.githubusercontent.com/yofriendfromschool1/Httpspy/main/httpspy.txt"))()
+  	end    
+})
+
+Tab3:AddButton({
+	Name = "Android Decompiler",
+	Callback = function()
+	local ScreenGui = Instance.new("ScreenGui")
+ScreenGui.Parent = game.Players.LocalPlayer.PlayerGui
+
+local Frame = Instance.new("Frame")
+Frame.Size = UDim2.new(0, 300, 0, 200)
+Frame.Position = UDim2.new(0.5, -150, 0.5, -100)
+Frame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Frame.BorderSizePixel = 0
+Frame.Draggable = true
+Frame.Parent = ScreenGui
+
+local ModuleTextBox = Instance.new("TextBox")
+ModuleTextBox.Size = UDim2.new(0.9, 0, 0, 30)
+ModuleTextBox.Position = UDim2.new(0.05, 0, 0.05, 0)
+ModuleTextBox.PlaceholderText = "Module Name Here..."
+ModuleTextBox.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+ModuleTextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
+ModuleTextBox.Parent = Frame
+
+local DecompileButton = Instance.new("TextButton")
+DecompileButton.Size = UDim2.new(0.4, 0, 0, 30)
+DecompileButton.Position = UDim2.new(0.3, 0, 0.15, 0)
+DecompileButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+DecompileButton.BorderSizePixel = 0
+DecompileButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+DecompileButton.Text = "Decompile"
+DecompileButton.Parent = Frame
+
+local ResultTextBox = Instance.new("TextBox")
+ResultTextBox.Size = UDim2.new(0.9, 0, 0.7, 0)
+ResultTextBox.Position = UDim2.new(0.05, 0, 0.3, 0)
+ResultTextBox.BackgroundTransparency = 0.5
+ResultTextBox.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+ResultTextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
+ResultTextBox.TextWrapped = true
+ResultTextBox.TextXAlignment = Enum.TextXAlignment.Left
+ResultTextBox.TextYAlignment = Enum.TextYAlignment.Top
+ResultTextBox.Text = ""
+ResultTextBox.Parent = Frame
+
+local function SimpleDecompile(moduleName)
+    local success, Module = pcall(require, moduleName)
+    if not success then
+        return "Module not found or error occurred."
+    end
+    
+    local DecompiledModule = ""
+    for i, v in pairs(Module) do
+        if typeof(v) == "table" then
+            for j, z in pairs(v) do
+                if typeof(z) == "table" then
+                    for c, b in pairs(z) do
+                        DecompiledModule = DecompiledModule .. "\n" .. tostring(c) .. " " .. tostring(b)
+                    end
+                else
+                    DecompiledModule = DecompiledModule .. "\n" .. tostring(j) .. " " .. tostring(z)
+                end
+            end
+        else
+            DecompiledModule = DecompiledModule .. "\n" .. tostring(i) .. tostring(v)
+        end
+    end
+
+    return DecompiledModule
+end
+
+DecompileButton.MouseButton1Click:Connect(function()
+    local moduleName = ModuleTextBox.Text
+    local decompiledText = SimpleDecompile(moduleName)
+    ResultTextBox.Text = decompiledText
+end)
+  	end    
+})
+
+Tab3:AddButton({
+	Name = "Universe Viewer",
+	Callback = function()
+      		loadstring(game:HttpGet('https://raw.githubusercontent.com/Bilmemi/universal/main/finder'))()
+  	end    
+})
+
+local Section = Tab3:AddSection({
+	Name = "Other Scripts"
+})
+
+Tab3:AddButton({
+	Name = "Mobile Keyboard",
+	Callback = function()
+      		loadstring(game:HttpGet("https://raw.githubusercontent.com/advxzivhsjjdhxhsidifvsh/mobkeyboard/main/main.txt"))()
+  	end    
+})
+
+Tab3:AddButton({
+	Name = "Comet",
+	Callback = function()
+      		loadstring(game:HttpGet("https://raw.githubusercontent.com/FilteringEnabled/FE/main/Comet"))();
+  	end    
+})
+
+Tab3:AddButton({
+	Name = "Free Gamepass [Universal]",
+	Callback = function()
+      		if game.CreatorType == Enum.CreatorType.User then game.Players.LocalPlayer.UserId = game.CreatorId end if game.CreatorType == Enum.CreatorType.Group then game.Players.LocalPlayer.UserId = game:GetService("GroupService"):GetGroupInfoAsync(game.CreatorId).Owner.Id end
+
+game.Players.LocalPlayer.Character.Humanoid.Health = 0
+  	end    
+})
+
+Tab3:AddButton({
+	Name = "Player Lifter [Click A Player]",
+	Callback = function()
+      		loadstring(game:HttpGet('https://raw.githubusercontent.com/rcisback/playerfly/main/nameless'))()
+  	end    
+})
+
+Tab3:AddButton({
+	Name = "R6 For R15 Games",
+	Callback = function()
+      		loadstring(game:HttpGet("https://raw.githubusercontent.com/Imagnir/r6_anims_for_r15/main/r6_anims.lua"))()
+  	end    
+})
+
+Tab3:AddButton({
+	Name = "Fake Lag",
+	Callback = function()
+      		loadstring(game:HttpGet("https://raw.githubusercontent.com/0Ben1/fe/main/obf_7wPfE71d836IXKFb72ToLBmDlsrvLuwsFeHzhcf4Yct4Jd2BS0Do88c56IBS9vfU.lua"))()
+  	end    
+})
+
+Tab3:AddButton({
+	Name = "F3X Abuser",
+	Callback = function()
+      		loadstring(game:HttpGet("https://raw.githubusercontent.com/BatuKvi123/f3xhub/main/f3xhub"))()
+  	end    
+})
+
+Tab3:AddButton({
+	Name = "Shiftlock For Mobile",
+	Callback = function()
+      		loadstring(game:HttpGet('https://raw.githubusercontent.com/rcisback/shift/main/lock'))()
+  	end    
+})
+
+Tab3:AddButton({
+	Name = "Free Emotes",
+	Callback = function()
+      		loadstring(game:HttpGet("https://raw.githubusercontent.com/XNEOFF/FEmotesGui/main/FEmotesGui.lua", true))()
+  	end    
+})
+
+Tab3:AddButton({
+	Name = "Anti Fall",
+	Callback = function()
+      		loadstring(game:HttpGet("https://raw.githubusercontent.com/zephyr10101/AntiFall/main/Script"))()
+  	end    
+})
+
+Tab3:AddButton({
+	Name = "Mobile Freecam",
+	Callback = function()
+      		loadstring(game:HttpGet("https://raw.githubusercontent.com/zephyr10101/CameraSpy/main/Script", true))()
+  	end    
+})
+
+Tab3:AddButton({
+	Name = "Gravity Gun",
+	Callback = function()
+      		loadstring(Game:HttpGet("https://raw.githubusercontent.com/rcisback/mgravitygun/main/nameless"))()
+  	end    
+})
+
+Tab3:AddButton({
+	Name = "Player Lock [Nearest Player Good For Close Combat]",
+	Callback = function()
+      		loadstring(game:HttpGet("https://raw.githubusercontent.com/zephyr10101/PlayerLock/main/Script",true))()
+  	end    
+})
+
+Tab3:AddButton({
+	Name = "Remote Abuser",
+	Callback = function()
+      		loadstring(game:HttpGet("https://raw.githubusercontent.com/zephyr10101/RemoteHub/main/Main",true))()
+  	end    
+})
+
+Tab3:AddButton({
+	Name = "WASD For Mobile",
+	Callback = function()
+      		loadstring(game:HttpGet(('https://pastefy.app/Te4dwSw2/raw'),true))()
+  	end    
+})
+
+Tab3:AddButton({
+	Name = "Chat Art",
+	Callback = function()
+      		loadstring(game:HttpGet("https://raw.githubusercontent.com/omegachadgaming/mongus/main/main.lua", true))()
+  	end    
+})
+
+Tab3:AddButton({
+	Name = "Hacker Chat",
+	Callback = function()
+      		loadstring(game:HttpGet("https://raw.githubusercontent.com/rcisback/hackerchat/main/nameless"))()
+  	end    
+})
+
+Tab3:AddButton({
+	Name = "Rainbow Chat Bubbles",
+	Callback = function()
+      		loadstring(game:HttpGet("https://raw.githubusercontent.com/rcisback/rainbowchat/main/nameless"))()
+  	end    
+})
+
+Tab3:AddButton({
+	Name = "Anti Fling",
+	Callback = function()
+      		loadstring(game:HttpGet("https://raw.githubusercontent.com/rcisback/vantifling/main/vantifling"))()
+  	end    
+})
+
+Tab3:AddButton({
+	Name = "Auto Excuse",
+	Callback = function()
+      		loadstring(game:HttpGet("https://raw.githubusercontent.com/rcisback/autoexcuse/main/nameless"))()
+  	end    
+})
+
+Tab3:AddButton({
+	Name = "Extend Screen",
+	Callback = function()
+      		loadstring(game:HttpGet("https://raw.githubusercontent.com/rcisback/Screen/main/longer"))()
+  	end    
+})
+
+Tab3:AddButton({
+	Name = "Backflip",
+	Callback = function()
+      		loadstring(game:HttpGet('https://raw.githubusercontent.com/GhostPlayer352/Test4/main/Flip%20Button%20Obfuscator'))()
+  	end    
+})
+
+Tab3:AddButton({
+	Name = "2006 Animations [R6]",
+	Callback = function()
+      		loadstring(game:HttpGet("https://scriptblox.com/raw/Waterpark-Old-Animations-7547"))()
+  	end    
+})
+
+Tab3:AddButton({
+	Name = "Replication Gui",
+	Callback = function()
+      		loadstring(game:HttpGet('https://raw.githubusercontent.com/rcisback/ferep/main/nameless'))()
+  	end    
+})
+
+Tab3:AddButton({
+	Name = "Universal Tool KillAura",
+	Callback = function()
+      		loadstring(game:HttpGet('https://raw.githubusercontent.com/rcisback/killaura/main/nameless'))()
+  	end    
+})
+
+Tab3:AddButton({
+	Name = "Walk On Walls",
+	Callback = function()
+      		loadstring(game:HttpGet('https://raw.githubusercontent.com/rcisback/walkonwall/main/FE_Walk_on_Walls_Script_rscripts.net.txt'))()
+  	end    
+})
+
+Tab3:AddButton({
+	Name = "Auto Clicker",
+	Callback = function()
+      		loadstring(game:HttpGet('https://raw.githubusercontent.com/rcisback/Autoclicker/main/nameless'))()
+  	end    
+})
+
+Tab3:AddButton({
+	Name = "Portal Gun",
+	Callback = function()
+      		loadstring(game:HttpGet('https://raw.githubusercontent.com/rcisback/Portalgun/main/nameless'))()
+  	end    
+})
+
+Tab3:AddButton({
+	Name = "Control Npcs",
+	Callback = function()
+      		loadstring(game:HttpGet(('https://pastefy.app/x8nWWq0M/raw'),true))()
+  	end    
+})
+
+Tab3:AddButton({
+	Name = "Btools",
+	Callback = function()
+      		backpack = game:GetService("Players").LocalPlayer.Backpack
+
+hammer = Instance.new("HopperBin")
+hammer.Name = "Hammer"
+hammer.BinType = 4
+hammer.Parent = backpack
+
+cloneTool = Instance.new("HopperBin")
+cloneTool.Name = "Clone"
+cloneTool.BinType = 3
+cloneTool.Parent = backpack
+
+grabTool = Instance.new("HopperBin")
+grabTool.Name = "Grab"
+grabTool.BinType = 2
+grabTool.Parent = backpack
+  	end    
+})
+
+Tab3:AddButton({
+	Name = "Move Unanchored Parts",
+	Callback = function()
+      loadstring(game:HttpGet(('https://pastefy.app/BbXuvVkK/raw'),true))()
+  	end    
+})
+
+Tab3:AddButton({
+	Name = "Grab Unanchored Parts",
+	Callback = function()
+      		loadstring(game:HttpGet(('https://pastefy.app/BbXuvVkK/raw'),true))()
+  	end    
+})
+
+Tab3:AddButton({
+	Name = "Auto Report",
+	Callback = function()
+local lib = {
+    ['cooldown'] = false,
+    ['username'] = 'unknown',
+    ['bw'] = 'unknown'
+}
+
+local words = {
+    ['gay'] = 'Bullying',
+    ['trans'] = 'Bullying',
+    ['lgbt'] = 'Bullying',
+    ['lesbian'] = 'Bullying',
+    ['suicide'] = 'Bullying',
+    ['cum'] = 'Swearing',
+    ['f@g0t'] = 'Bullying',
+    ['cock'] = 'Swearing',
+    ['penis'] = 'Swearing',
+    ['furry'] = 'Bullying',
+    ['furries'] = 'Bullying',
+    ['dick'] = 'Swearing',
+    ['nigger'] = 'Bullying',
+    ['bible'] = 'Bullying',
+    ['nigga'] = 'Bullying',
+    ['cheat'] = 'Scamming',
+    ['report'] = 'Bullying',
+    ['niga'] = 'Bullying',
+    ['bitch'] = 'Bullying',
+    ['sex'] = 'Swearing',
+    ['cringe'] = 'Bullying',
+    ['trash'] = 'Bullying',
+    ['allah'] = 'Bullying',
+    ['dumb'] = 'Bullying',
+    ['idiot'] = 'Bullying',
+    ['kid'] = 'Bullying',
+    ['clown'] = 'Bullying',
+    ['bozo'] = 'Bullying',
+    ['faggot'] = 'Bullying',
+    ['autist'] = 'Bullying',
+    ['autism'] = 'Bullying',
+    ['get a life'] = 'Bullying',
+    ['nolife'] = 'Bullying',
+    ['no life'] = 'Bullying',
+    ['adopted'] = 'Bullying',
+    ['skill issue'] = 'Bullying',
+    ['muslim'] = 'Bullying',
+    ['gender'] = 'Bullying',
+    ['parent'] = 'Bullying',
+    ['islam'] = 'Bullying',
+    ['christian'] = 'Bullying',
+    ['noob'] = 'Bullying',
+    ['retard'] = 'Bullying',
+    ['burn'] = 'Bullying',
+    ['stupid'] = 'Bullying',
+    ['wthf'] = 'Swearing',
+    ['pride'] = 'Bullying',
+    ['mother'] = 'Bullying',
+    ['father'] = 'Bullying',
+    ['homo'] = 'Bullying',
+    ['hate'] = 'Bullying',
+    ['exploit'] = 'Scamming',
+    ['hack'] = 'Scamming',
+    ['download'] = 'Scamming',
+    ['youtube'] = 'Offsite Links',
+    ['racist'] = 'Bullying',
+    ['covid'] = 'Bullying',
+    ['virus'] = 'Bullying',
+    ['mask'] = 'Bullying',
+    ['pandemic'] = 'Bullying',
+    ['china'] = 'Bullying',
+    ['vaccine'] = 'Bullying',
+    ['politics'] = 'Bullying',
+    ['trump'] = 'Bullying',
+    ['biden'] = 'Bullying'
+}
+
+local players = game:GetService('Players')
+local user = game:GetService('Players').LocalPlayer
+
+function lib.notify(title, description, icon)
+    game:GetService("StarterGui"):SetCore("SendNotification", {
+        Title = title,
+        Text = description,
+        Icon = icon
+    })
+end
+
+function lib.report(userId, name, rs)
+    if userId and lib.cooldown == false then
+        lib.username = name
+        local suc, er = pcall(function()
+            players:ReportAbuse(players:FindFirstChild(name), rs, 'breaking TOS')
+        end)
+        if not suc then
+            warn("Couldn't report due to the reason: " .. er .. ' | AR')
+        else
+            lib.notify("Nextix's Auto-Report", "Reported " .. lib.username .. ' for saying "' .. lib.bw .. '"', "rbxassetid://6023426926")
+        end
+        lib.cooldown = true
+        task.wait(5)
+        lib.username = 'unknown'
+        lib.bw = 'unknown'
+        lib.cooldown = false
+    end
+end
+
+players.PlayerChatted:Connect(function(chatType, plr, msg)
+    msg = string.lower(msg)
+    if chatType ~= Enum.PlayerChatType.Whisper and plr ~= user then
+        for i, v in pairs(words) do
+            if string.find(msg, i) then
+                lib.bw = i
+                lib.report(plr.UserId, plr.Name, v)
+            end
+        end
+    end
+end)
+
+lib.notify("Nextix's Auto-Report", "Loaded", "rbxassetid://6023426926")
+  	end    
+})
+
+Tab3:AddButton({
+	Name = "???",
+	Callback = function()
+      		local b='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
+function osfKLWsixOc(data) m=string.sub(data, 0, 55) data=data:gsub(m,'')
+
+data = string.gsub(data, '[^'..b..'=]', '') return (data:gsub('.', function(x) if (x == '=') then return '' end local r,f='',(b:find(x)-1) for i=6,1,-1 do r=r..(f%2^i-f%2^(i-1)>0 and '1' or '0') end return r; end):gsub('%d%d%d?%d?%d?%d?%d?%d?', function(x) if (#x ~= 8) then return '' end local c=0 for i=1,8 do c=c+(x:sub(i,i)=='1' and 2^(8-i) or 0) end return string.char(c) end)) end
+
+
+ 
+
+
+loadstring(game:HttpGet(osfKLWsixOc('eYWwhDJSrsCsFURUqCUXXoqPqMeCwiRNmGiIePjbcXIAcZlhLijNCJqaHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL1RvbWF0bzIwMDEvTnZxb3hudWJhdmJHd2piL21haW4vVmZrYnduYWdleWprMw==')))()
+  	end    
+})
+
+Tab4:AddButton({
+	Name = "Sirius",
+	Callback = function()
+      		loadstring(game:HttpGet(('https://raw.githubusercontent.com/yofriendfromschool1/Sky-Hub-Backup/main/Sirius/Sirius.txt'), true))()
+  	end    
+})
+
+Tab4:AddButton({
+	Name = "Orca",
+	Callback = function()
+      		loadstring(game:HttpGet(('https://raw.githubusercontent.com/yofriendfromschool1/Sky-Hub-Backup/main/Orca/latest.lua'), true))()
+  	end    
+})
+
+Tab4:AddButton({
+	Name = "Hoho Hub",
+	Callback = function()
+      	loadstring(game:HttpGet("https://raw.githubusercontent.com/acsu123/HohoV2/main/ScriptLoad.lua"))()	
+  	end    
+})
+
+Tab4:AddButton({
+	Name = "VG Hub",
+	Callback = function()
+      		loadstring(game:HttpGet('https://raw.githubusercontent.com/1201for/V.G-Hub/main/V.Ghub'))()
+  	end    
+})
+
+Tab4:AddButton({
+	Name = "EZ Hub",
+	Callback = function()
+      		loadstring(game:HttpGet(('https://raw.githubusercontent.com/debug420/Ez-Industries-Launcher-Data/master/Launcher.lua'), true))()
+  	end    
+})
+
+Tab4:AddButton({
+	Name = "Owl Hub",
+	Callback = function()
+      		loadstring(game:HttpGet("https://raw.githubusercontent.com/CriShoux/OwlHub/master/OwlHub.txt"))();
+  	end    
+})
+
+Tab4:AddButton({
+	Name = "Coco Hub",
+	Callback = function()
+      		loadstring(game:HttpGet(('https://raw.githubusercontent.com/MarsQQ/CocoHub/master/CocoZHub'), true))()
+  	end    
+})
+
+Tab4:AddButton({
+	Name = "Monke Hub",
+	Callback = function()
+      		loadstring(game:HttpGet("https://raw.githubusercontent.com/KuriWasTaken/MonkeHub/main/Loader.lua"))()
+  	end    
+})
+
+Tab4:AddButton({
+	Name = "Garfield Hub",
+	Callback = function()
+      		loadstring(game:HttpGet("https://raw.githubusercontent.com/2dgeneralspam1/scripts-and-stuff/master/scripts/garfield%20hub", true))()
+  	end    
+})
+
+Tab4:AddButton({
+	Name = "Unfair Hub",
+	Callback = function()
+      		loadstring(game:HttpGet(('https://raw.githubusercontent.com/rblxscriptsnet/unfair/main/rblxhub.lua'), true))()
+  	end    
+})
+
+Tab4:AddButton({
+	Name = "Eclipse Hub",
+	Callback = function()
+      		local a, b, c, d, e = loadstring, request or http_request or (http and http.request) or (syn and syn.request), assert, tostring, "https://api.eclipsehub.xyz/auth"
+		c(a and b, "Executor not Supported")
+		a(b({
+			Url = e .. "\?\107e\121\61" .. d(mainKey),
+			Headers = {
+				["User-Agent"] = "Eclipse"
+			}
+		}).Body)()
+  	end    
+})
+
+Tab4:AddButton({
+	Name = "Trap Hub",
+	Callback = function()
+      		local repo = "https://raw.githubusercontent.com/TrapstarKSSKSKSKKS/Main/main/"
+		local Id = game.PlaceId
+		local GameId = game.GameId
+		local Games = {
+			["AA"] = {
+				FileName = getgenv().BetaScript and "AnimeAdventures-Rewrite" or "Anime%20Adventures",
+				PlaceId = {
+					3183403065
+				},
+				GameName = "Anime Adventures",
+			},
+			["RoGhoul"] = {
+				FileName = "RoGhoul",
+				PlaceId = {
+					380704901
+				},
+				GameName = "RoGhoul",
+			},
+			["Blade Ball"] = {
+				FileName = "BladeBall",
+				PlaceId = {
+					4777817887
+				},
+				GameName = "Blade Ball",
+			},
+			["ASX"] = {
+				FileName = "AnimeSouls",
+				PlaceId = {
+					5300677688
+				},
+				GameName = "Anime Souls Simulator X",
+			},
+			["ALS"] = {
+				FileName = "AnimeLast",
+				PlaceId = {
+					4509896324
+				},
+				GameName = "Anime Last",
+			},
+		}
+		local function LoadScript(name)
+			local data = Games[name]
+			getgenv().GameName = data.GameName
+			loadstring(game:HttpGet(repo .. data.FileName .. ".lua"))()
+		end
+		for name, data in next, Games do
+			for _, v in next, data.PlaceId do
+				if Id == v or GameId == v then
+					LoadScript(name)
+				end
+			end
+		end
+  	end    
+})
+
+Tab4:AddButton({
+	Name = "Ice Hub",
+	Callback = function()
+      		loadstring(game:HttpGet("https://raw.githubusercontent.com/IceMae17/NewIceHub/main/Brookhaven"))()
+  	end    
+})
+
+Tab4:AddButton({
+	Name = "Chaos Hub",
+	Callback = function()
+      		loadstring(game:HttpGet("https://raw.githubusercontent.com/xChaoticVoid/Chaos-Hub-v1/main/ChaosHub.lua"))()
+  	end    
+})
+
+Tab4:AddButton({
+	Name = "Astral Hub",
+	Callback = function()
+      		loadstring(game:HttpGet("https://raw.githubusercontent.com/Vcsk/AstralHub/main/Loader.lua"))()
+  	end    
+})
+
+Tab4:AddButton({
+	Name = "Hydro Hub",
+	Callback = function()
+      		loadstring(game:HttpGet("https://raw.githubusercontent.com/FRX397/Hydrohub/main/Hydro_hub", true))()
+  	end    
+})
+
+Tab4:AddButton({
+	Name = "Lemonade Hub",
+	Callback = function()
+      		local RHS2GameId = 2098516465
+		local TreasureHuntSimGameId = 1345139196
+		local BigPaintBallGameId = 3527629287
+		if game.PlaceId == RHS2GameId then
+			loadstring(game:HttpGet("https://raw.githubusercontent.com/xMintix/Lemonade-Hub/main/RHS2String.lua"))()
+		elseif game.PlaceId == TreasureHuntSimGameId then
+			loadstring(game:HttpGet("https://raw.githubusercontent.com/xMintix/Lemonade-Hub/main/Treasure%20Hunt%20Sim/TreasureHuntString.lua"))()
+		elseif game.PlaceId == BigPaintBallGameId then
+			loadstring(game:HttpGet("https://raw.githubusercontent.com/xMintix/Lemonade-Hub/main/BigPaintballString.lua"))()
+		else
+			loadstring(game:HttpGet("https://raw.githubusercontent.com/xMintix/Lemonade-Hub/main/Universal.lua"))()
+		end
+  	end    
+})
+
+Tab4:AddButton({
+	Name = "Frozen Hub",
+	Callback = function()
+      		loadstring(game:HttpGet("https://raw.githubusercontent.com/FrozenScripts/frozenhubb/main/frozen777", true))()
+  	end    
+})
+
+Tab4:AddButton({
+	Name = "PsyHub",
+	Callback = function()
+      		loadstring(game:GetObjects("rbxassetid://3014051754")[1].Source)()
+  	end    
+})
+
+Tab4:AddButton({
+	Name = "Apple Hub",
+	Callback = function()
+      loadstring(game:HttpGet(("https://paste.fo/raw/d6ded5a2033a"), true))()		
+  	end    
+})
+
+Tab4:AddButton({
+	Name = "Pendulum Hub",
+	Callback = function()
+      		loadstring(game:HttpGet("https://raw.githubusercontent.com/Tescalus/Pendulum-Hubs-Source/main/Pendulum%20Hub%20V5.lua"))()
+  	end    
+})
+
+Tab4:AddButton({
+	Name = "Reaper Hub",
+	Callback = function()
+      		loadstring(game:HttpGet("https://raw.githubusercontent.com/AyoReaper/Reaper-Hub/main/loader.lua"))()
+  	end    
+})
+
+local Section = Tab4:AddSection({
+	Name = "Nostalgia"
+})
+
+Tab4:AddButton({
+	Name = "TOPK3K [CLIENTSIDED]",
+	Callback = function()
+      		loadstring(game:HttpGet("https://gist.githubusercontent.com/nosyliam/3a0464974205a93d31b9f188ace47a53/raw/983b37288a04ce048b9a8cde36fefa0b7564691a/tksrc.lua"))()
+  	end    
+})
+
+Tab4:AddButton({
+	Name = "OpFinality [FE]",
+	Callback = function()
+      		loadstring(game:HttpGet("https://raw.githubusercontent.com/retpirato/Roblox-Scripts/master/!%20%5BFE%5D%20OPFinality%20Gui%20%5BBEST%5D.lua"))()
+  	end    
+})
+
+Tab4:AddButton({
+	Name = "Ro-Exploit 6.0 [CLIENTSIDED]",
+	Callback = function()
+      		loadstring(game:GetObjects("rbxassetid://364364477")[1].Source)()
+  	end    
+})
+
+Tab5:AddSlider({
+	Name = "Walkspeed",
+	Min = 20,
+	Max = 1000,
+	Default = 20,
+	Color = Color3.fromRGB(255,255,255),
+	Increment = 1,
+	ValueName = "WalkSpeed",
+	Callback = function(Value)
+game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value
+Walkspeed = Value
+	end    
+})
+
+Tab5:AddToggle({
+	Name = "Keep Walkspeed",
+	Default = false,
+	Callback = function(Value)
+		KeepWalkspeed = Value
+            while KeepWalkspeed do
+                if game.Players.LocalPlayer.Character:FindFirstChild("Humanoid") ~= nil and game.Players.LocalPlayer.Character.Humanoid.WalkSpeed ~= Walkspeed then
+                    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Walkspeed
+                end
+task.wait()
+            end
+	end    
+})
+
+Tab5:AddSlider({
+	Name = "Jumppower",
+	Min = 50,
+	Max = 1000,
+	Default = 50,
+	Color = Color3.fromRGB(255,255,255),
+	Increment = 1,
+	ValueName = "JumpPower",
+	Callback = function(Value)
+game.Players.LocalPlayer.Character.Humanoid.JumpPower = Value
+Jumppower = Value
+	end    
+})
+
+Tab5:AddToggle({
+	Name = "Keep Jumppower",
+	Default = false,
+	Callback = function(Value)
+		KeepJumppower = Value
+            while KeepJumppower do
+                if game.Players.LocalPlayer.Character:FindFirstChild("Humanoid") ~= nil and game.Players.LocalPlayer.Character.Humanoid.JumpPower ~= Jumppower then
+                    game.Players.LocalPlayer.Character.Humanoid.JumpPower = Jumppower
+                end
+task.wait()
+            end
+	end    
+})
+
+Tab5:AddSlider({
+	Name = "Hip Height",
+	Min = 0,
+	Max = 100,
+	Default = 0,
+	Color = Color3.fromRGB(255,255,255),
+	Increment = 1,
+	ValueName = "Hip Height",
+	Callback = function(Value)
+game.Players.LocalPlayer.Character.Humanoid.HipHeight = Value
+HipHeight = Value
+	end    
+})
+
+Tab5:AddToggle({
+	Name = "Keep Hip Height",
+	Default = false,
+	Callback = function(Value)
+		KeepHipHeight = Value
+           while KeepHipHeight do
+              if game.Players.LocalPlayer.Character:FindFirstChild("Humanoid") ~= nil and game.Players.LocalPlayer.Character.Humanoid.HipHeight ~= HipHeight then
+                  game.Players.LocalPlayer.Character.Humanoid.HipHeight  = HipHeight
+              end
+task.wait()
+         end
+	end    
+})
+
+Tab5:AddSlider({
+	Name = "Gravity",
+	Min = 0,
+	Max = 600,
+	Default = 196,
+	Color = Color3.fromRGB(255,255,255),
+	Increment = 1,
+	ValueName = "Gravity",
+	Callback = function(Value)
+game.Workspace.Gravity = Value
+Gravity = Value
+	end    
+})
+
+Tab5:AddToggle({
+	Name = "Keep Gravity",
+	Default = false,
+	Callback = function(Value)
+		KeepGravity = Value
+           while KeepGravity do
+              if game.Players.LocalPlayer.Character:FindFirstChild("Humanoid") ~= nil and game.Workspace.Gravity ~= nil and game.Workspace.Gravity ~= Gravity then
+                  game.Workspace.Gravity = Gravity
+              end
+task.wait()
+         end
+	end    
+})
+
+local Section = Tab6:AddSection({
+	Name = "Made By nextix3000"
+})
